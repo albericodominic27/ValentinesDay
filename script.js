@@ -11,9 +11,9 @@ const initialTopRatio = 0.62;
 
 // Replace these with your own GIF links.
 const yesGifUrl =
-  "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2Jqc3h4dzN4MzN2Zm4zM2NpN2Jxb3Q2cm85ZXJ2N3A2MmwwMHVhZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlO2J7el5N9ud7a/giphy.gif";
+  "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTJ6YWV4emNqYXkxMXV6MjNldDN4YWppejRqZTR0dXNlZGJoNXV2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T70hpBP1L0N7U0jtkq/giphy.gif";
 const noGifUrl =
-  "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm5qZWk3aDB3bWZqMjV0NG5zM2Q5eTR3MzQwa3JjNWEybHF4NnM5dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13borq7Zo2kulO/giphy.gif";
+  "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExczc2N3V5azF2cjMzemgwcmZjZ3h0d2VxcnFpNDRlbTc2azNzZXdoZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/98MaHVwJOmWMz4cz1K/giphy.gif";
 
 
 function emitHeartsFromYesButton() {
