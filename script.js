@@ -5,7 +5,7 @@ const heroImage = document.getElementById("heroImage");
 
 let noCount = 0;
 let isYesSelected = false;
-const growthStep = 0.12;
+const growthStep = 0.24;
 const buttonGap = 12;
 const initialTopRatio = 0.62;
 
