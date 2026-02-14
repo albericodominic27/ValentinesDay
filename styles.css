@@ -89,3 +89,34 @@ h1 {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.heart-particle {
+  position: fixed;
+  left: var(--start-x);
+  top: var(--start-y);
+  font-size: var(--size, 1.2rem);
+  line-height: 1;
+  color: #ff1f55;
+  text-shadow: 0 2px 6px rgba(255, 31, 85, 0.35);
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  animation: heart-burst var(--dur, 1000ms) ease-out forwards;
+}
+
+@keyframes heart-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy)))
+      scale(1.15) rotate(var(--rot));
+    opacity: 0;
+  }
+}

@@ -15,6 +15,41 @@ const yesGifUrl =
 const noGifUrl =
   "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm5qZWk3aDB3bWZqMjV0NG5zM2Q5eTR3MzQwa3JjNWEybHF4NnM5dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13borq7Zo2kulO/giphy.gif";
 
+
+function emitHeartsFromYesButton() {
+  const yesRect = yesBtn.getBoundingClientRect();
+  const originX = yesRect.left + yesRect.width / 2;
+  const originY = yesRect.top + yesRect.height / 2;
+  const particles = 16;
+
+  for (let i = 0; i < particles; i += 1) {
+    const heart = document.createElement("span");
+    heart.className = "heart-particle";
+    heart.textContent = "❤";
+
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 36 + Math.random() * 120;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance - 30;
+    const rotation = -24 + Math.random() * 48;
+    const size = 0.95 + Math.random() * 0.9;
+    const duration = 700 + Math.random() * 600;
+
+    heart.style.setProperty("--start-x", `${originX}px`);
+    heart.style.setProperty("--start-y", `${originY}px`);
+    heart.style.setProperty("--dx", `${dx.toFixed(1)}px`);
+    heart.style.setProperty("--dy", `${dy.toFixed(1)}px`);
+    heart.style.setProperty("--rot", `${rotation.toFixed(1)}deg`);
+    heart.style.setProperty("--size", `${size.toFixed(2)}rem`);
+    heart.style.setProperty("--dur", `${duration.toFixed(0)}ms`);
+
+    document.body.appendChild(heart);
+    heart.addEventListener("animationend", () => {
+      heart.remove();
+    });
+  }
+}
+
 function setInitialButtonPositions() {
   const areaRect = buttonArea.getBoundingClientRect();
   const yesWidth = yesBtn.offsetWidth;
@@ -98,6 +133,7 @@ yesBtn.addEventListener("click", () => {
 
   heroImage.src = yesGifUrl;
   heroImage.alt = "Yes response GIF";
+  emitHeartsFromYesButton();
 });
 
 window.addEventListener("resize", setInitialButtonPositions);
