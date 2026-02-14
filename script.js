@@ -4,6 +4,7 @@ const buttonArea = document.getElementById("buttonArea");
 const heroImage = document.getElementById("heroImage");
 
 let noCount = 0;
+let isYesSelected = false;
 const growthStep = 0.12;
 const buttonGap = 12;
 const initialTopRatio = 0.62;
@@ -77,6 +78,10 @@ function moveNoButton() {
 }
 
 noBtn.addEventListener("click", () => {
+  if (isYesSelected) {
+    return;
+  }
+
   noCount += 1;
   const newScale = 1 + noCount * growthStep;
   yesBtn.style.transform = `scale(${newScale})`;
@@ -86,6 +91,11 @@ noBtn.addEventListener("click", () => {
 });
 
 yesBtn.addEventListener("click", () => {
+  isYesSelected = true;
+  noBtn.disabled = true;
+  noBtn.classList.add("locked");
+  noBtn.setAttribute("aria-disabled", "true");
+
   heroImage.src = yesGifUrl;
   heroImage.alt = "Yes response GIF";
 });
